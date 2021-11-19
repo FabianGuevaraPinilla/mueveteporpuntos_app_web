@@ -1,0 +1,642 @@
+{
+	"info": {
+		"_postman_id": "18e4618d-0ee8-45b1-8e3a-d18ab4ef27cd",
+		"name": "pruebas app-muevetexpuntos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "premios",
+			"item": [
+				{
+					"name": "POST NEW PREMIO",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombre",
+									"value": "plancha electrica",
+									"type": "text"
+								},
+								{
+									"key": "id_categoria",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "marca",
+									"value": "Home",
+									"type": "text"
+								},
+								{
+									"key": "detalle",
+									"value": "200W cera",
+									"type": "text"
+								},
+								{
+									"key": "cantidad",
+									"value": "120",
+									"type": "text"
+								},
+								{
+									"key": "valor_puntos",
+									"value": "400",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/premios/61889924def515be96661d18",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"premios",
+								"61889924def515be96661d18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PREMIOS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/premios",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"premios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST NEW PREMIO Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombre",
+									"value": "plancha electrica",
+									"type": "text"
+								},
+								{
+									"key": "id_categoria",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "marca",
+									"value": "Home",
+									"type": "text"
+								},
+								{
+									"key": "detalle",
+									"value": "200W cera",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/premios",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"premios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PREMIO BY ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/premios/61884a59c142cce7b047b6db",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"premios",
+								"61884a59c142cce7b047b6db"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PREMIO BY ID-SIMPLIFIED",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/premios/61884a59c142cce7b047b6db?simple=true",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"premios",
+								"61884a59c142cce7b047b6db"
+							],
+							"query": [
+								{
+									"key": "simple",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CATEGORIAS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/premios/categorias",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"premios",
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "eventos",
+			"item": [
+				{
+					"name": "EVENTOS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/eventos/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"eventos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EVENTOS BY ID SIMPLE",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/eventos/6161c2eb0936154b7e61436f",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"eventos",
+								"6161c2eb0936154b7e61436f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EVENTOS BY ID -RELACIONADA",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/eventos/6161c2eb0936154b7e61436f?simple=true",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"eventos",
+								"6161c2eb0936154b7e61436f"
+							],
+							"query": [
+								{
+									"key": "simple",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CATEGORIAS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/eventos/categorias",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"eventos",
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TIPOS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/eventos/tipos",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"eventos",
+								"tipos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "usuario",
+									"value": "1234567",
+									"type": "text"
+								},
+								{
+									"key": "pass",
+									"value": "admin1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/usuarios/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "funcionarios",
+			"item": [
+				{
+					"name": "New Folder",
+					"item": []
+				},
+				{
+					"name": "FUNCIONARIO ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/funcionarios/479781",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"funcionarios",
+								"479781"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FUNCIONARIOS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/funcionarios/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"funcionarios",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inscripciones",
+			"item": [
+				{
+					"name": "INSCRIPCIONES TOTALES",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/inscripciones",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"inscripciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INSCRIPCIONES USUARIO",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/inscripciones?usuario=23085668",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"inscripciones"
+							],
+							"query": [
+								{
+									"key": "usuario",
+									"value": "23085668"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INSCRIPCIONES EVENTO",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/inscripciones?evento=6161c2eb0936154b7e61437a",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"inscripciones"
+							],
+							"query": [
+								{
+									"key": "evento",
+									"value": "6161c2eb0936154b7e61437a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INSCRIPCIONES EVENTO-USUARIO",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/inscripciones?evento=133b2yub3&usuario=10",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"inscripciones"
+							],
+							"query": [
+								{
+									"key": "evento",
+									"value": "133b2yub3"
+								},
+								{
+									"key": "usuario",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NUEVA INSCRIPCION",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODdkM2MxYzE0MmNjZTdiMDQ3YjZkOCIsInVzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTYzNjMyMDAyM30.oO7uQ75HRCiJhMN9JK6tk3DpWlIVADrCKfBsnLkbJiw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id_evento",
+									"value": "6161c2eb0936154b7e61437a",
+									"type": "text"
+								},
+								{
+									"key": "id_documento",
+									"value": "10297376",
+									"type": "text"
+								},
+								{
+									"key": "correo",
+									"value": "jose.coral@miempresa.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/inscripciones",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"inscripciones"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
