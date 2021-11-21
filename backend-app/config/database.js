@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const config = require("./configEnvirroment")
 
 exports.mongoConnect = () =>{
+    
+    //mongodb+srv://user-pruebas:WviaeBXWOMn5zMEg@cluster0.ainyd.mongodb.net/bd_muevetexpuntos?retryWrites=true&w=majority
     const mongoStringConnectiont =`mongodb+srv://${config.USER_MONGO}:${config.PASS_MONGO}@cluster0.ainyd.mongodb.net/${config.BD}?retryWrites=true&w=majority`;
     mongoose.connect(mongoStringConnectiont);
     mongoose.Promise =global.Promise;

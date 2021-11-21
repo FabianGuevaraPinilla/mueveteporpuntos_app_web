@@ -1,3 +1,4 @@
+@import "../../Assets/Styles/_colors.scss";
 #navbar #dropdown-header .row:nth-child(1){
     font-size: 70px;
     display: flex;
@@ -12,4 +13,7 @@
 .logo{
     width: 100px;
     padding-right: 10px;
+}
+.navbar-dark {
+    background-color: $color-gray;
 }

@@ -1,10 +1,12 @@
 import React from 'react'
 import { Col, Row, Container } from 'react-bootstrap'
 
+import "./Footer.login.scss";
+
 export default function FooterLogin() {
     return (
         <div>
-            <Container>
+            <Container variant = "light">
                 <Row>
                     <Col>
                         Bienvenido

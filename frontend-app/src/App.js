@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavbarLogin from "./Components/Navbar/Navbar.login";
 import FooterLogin from "./Components/Footer/Footer.login";

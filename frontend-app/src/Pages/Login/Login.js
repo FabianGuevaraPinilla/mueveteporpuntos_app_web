@@ -51,7 +51,7 @@ export default class Login extends React.Component {
         <Loading show={this.state.loading} />
         <Row>
           <Col>
-            <Row>
+            <Row >
               <h2>Iniciar sesión</h2>
             </Row>
             <Row>

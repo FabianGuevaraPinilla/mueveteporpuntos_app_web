@@ -8,7 +8,7 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
-import "./Navbar.login.css";
+import "./Navbar.login.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 
@@ -22,7 +22,7 @@ export default class NavbarLogin  extends React.Component {
   }
   render() {
     return (
-      <Navbar fixed="top" id="navbar" bg="primary" variant="dark">
+      <Navbar fixed="top" id="navbar" variant="dark">
         <Container>
           <img className="logo" src={logo}/>
           <Navbar.Brand href="#home">

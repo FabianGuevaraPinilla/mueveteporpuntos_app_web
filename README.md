@@ -7,3 +7,7 @@ MongoDB
 Express
 React
 Node
+
+
+## Estructura carpetas
+
