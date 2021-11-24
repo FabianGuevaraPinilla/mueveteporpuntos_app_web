@@ -36,7 +36,7 @@ export default class Login extends React.Component {
           });
 
           //redirigir al home
-          this.props.history.push("/home")
+          this.props.history.push("/admin")
         }
         this.setState({ loading: false });
       })
