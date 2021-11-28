@@ -9,9 +9,19 @@ export function calculaExpiracionSesion() {
     const newDate = now + 60 * 30 * 1000;
     return new Date(newDate);
 }
-
+export function getAuth(){
+    return !getSesion() ? false : true;
+  }
+  
 export function getSesion(){
      return isUndefined(cookies.get('_s')) ? false: cookies.get('_s');
+}
+
+export function getRol(){
+    return isUndefined(cookies.get('rol')) ? "NONE": cookies.get('rol')
+}
+export function getUsername(){
+    return isUndefined(cookies.get('username')) ? "": cookies.get('username')
 }
 export function renovarSesion(){
     const sesion = getSesion();

@@ -4,7 +4,6 @@ import React from 'react'
 
 
 const checkAuth = () => {
-    console.log(getSesion());
     return !getSesion() ? false : true;
 }
 
@@ -25,8 +24,7 @@ export default class PrivateRoute extends React.Component {
 
     render() {
         const {component: Component, ...rest} = this.props;
-        console.log(this.state.auth);
-        return (
+                return (
             <Route
                 {...rest}
                 render={(props) => {

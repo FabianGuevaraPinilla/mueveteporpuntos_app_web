@@ -7,6 +7,7 @@ import Cookies from "universal-cookie";
 import { calculaExpiracionSesion } from "../../Helper/helper";
 import Loading from "../../Components/Loading/Loading";
 import { HOST } from "../../config";
+import { UserContext } from "../../Contexts/UserContext";
 const cookies = new Cookies();
 
 export default class Login extends React.Component {
@@ -18,9 +19,9 @@ export default class Login extends React.Component {
       pass: "",
     };
   }
-  iniciarSesion() {
+  iniciarSesion(iniciarSesionContext) {
     this.setState({ loading: true });
-    console.log("se va a consultar");
+    console.log("se va a loguear");
     axios
       .post(`${HOST}/usuarios/login`, {
         usuario: this.state.usuario,
@@ -30,13 +31,32 @@ export default class Login extends React.Component {
         if (isNull(response.data.token)) {
           alert("Usuario y/o contraseña invalido");
         } else {
+          // ha sido logueado correctamente
+          console.log(response.data)
+          // se crean los cookies
           cookies.set("_s", response.data.token, {
             path: "/",
             expires: calculaExpiracionSesion(),
           });
-
-          //redirigir al home
-          this.props.history.push("/home")
+          cookies.set("rol", response.data.rol, {
+            path: "/",
+            expires: calculaExpiracionSesion(),
+          })
+          cookies.set("username", response.data.usuario, {
+            path: "/",
+            expires: calculaExpiracionSesion(),
+          })
+          iniciarSesionContext(
+            true,
+            response.data.rol,
+            response.data.usuario
+          )
+          //redirigir al home O dashboard segun el 
+          if (response.data.rol === "USER") {
+            this.props.history.push("/home")
+          } else if (response.data.rol === "ADMIN") {
+            this.props.history.push("/admin/main")
+          }
         }
         this.setState({ loading: false });
       })
@@ -79,15 +99,19 @@ export default class Login extends React.Component {
                       onChange={(e) => this.setState({ pass: e.target.value })}
                     />
                   </Form.Group>
-
-                  <Button
-                    variant="success"
-                    onClick={() => {
-                      this.iniciarSesion();
-                    }}
-                  >
-                    Iniciar sesión
-                  </Button>
+                  <UserContext.Consumer>
+                    {
+                      ({ iniciarSesionContext }) => (<Button
+                        variant="success"
+                        onClick={() => {
+                          this.iniciarSesion(iniciarSesionContext);
+                        }}
+                      >
+                        Iniciar sesión
+                      </Button>
+                      )
+                    }
+                  </UserContext.Consumer>
                 </Form>
               </Col>
             </Row>

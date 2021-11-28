@@ -1,6 +1,3 @@
-//referencia usada para lograr la funcionalidad de consultar una imagen
-//https://www.iteramos.com/pregunta/33381/como-servir-una-imagen-usando-nodejs
-
 var path = require('path');
 var fs = require('fs');
 const filepathError = path.join(__dirname, '../assets/images/cross.jpg');
