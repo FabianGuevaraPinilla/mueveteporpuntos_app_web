@@ -9,6 +9,8 @@ import Admin from "../Pages/Admin/Admin"
 import EventosPage from "../Pages/Eventos/EventosPage";
 import PremiosPage from "../Pages/Premios/PremiosPage";
 import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
+import EventosInscripcion from "../Pages/Eventos/Components/EventosInscripcion";
+
 
 import DashboardEventos from "../Pages/Admin/Views/DashboardEventos/DashboardEventos";
 import DashboardMain from "../Pages/Admin/Views/DashboardMain.js/DashboardMain";
@@ -109,9 +111,9 @@ export default class AppRouter extends React.Component {
           <div className="mt-5 pt-2">
             <Switch>
               <PrivateRoute exact path={["/", "/home"]} component={Home} />
-              <PrivateRoute path="/eventos" component={EventosPage} />
+              <PrivateRoute exac path="/eventos" component={EventosPage} />
+              <PrivateRoute path="/eventos/inscripcion/:idEvento" component={EventosInscripcion} />
               <PrivateRoute path="/premios" component={PremiosPage} />
-
               <Redirect from="/login" to="/" />
               <Route path={"*"} component={NotFoundPage} />
             </Switch>
@@ -122,9 +124,10 @@ export default class AppRouter extends React.Component {
         return (
           <div className="mt-5 pt-2">
             <Switch>
-              <PrivateRoute path="/eventos" component={EventosPage} />
+              <PrivateRoute exact path="/eventos" component={EventosPage} />
+              <PrivateRoute path="/eventos/inscripcion/:idEvento" component={EventosInscripcion} />
               <PrivateRoute path="/premios" component={PremiosPage} />
-
+              
               <PrivateRoute exact path={["/admin", "/admin/main"]}>
                 <Admin>
                   <PrivateRoute exact path="/admin/main" component={DashboardMain}></PrivateRoute>
