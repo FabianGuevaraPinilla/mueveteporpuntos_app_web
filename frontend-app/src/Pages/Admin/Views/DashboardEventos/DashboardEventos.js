@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+import { Container, Nav, Row } from 'react-bootstrap';
 
-import FormEventoNuevo from './Components/FormEventoNuevo'
+//componentes usados
+import FormEventoEditar from "./Components/FormEventoEditar";
+import FormEventoNuevo from "./Components/FormEventoNuevo";
+import TableEventos from "./Components/TableEventos";
 
 import config from '../../../../config';
-import Loading from '../../../../Components/Loading/Loading';
 
 export default class DashboardEventos extends Component {
 
@@ -16,7 +19,32 @@ export default class DashboardEventos extends Component {
             listaSucursales: [],
 
             isLoadingData: true,
+
+            //navegacion
+            currentTab: 'buscar',
+            //id selecionado
+            _id: null,
         }
+
+        //métodos de navegación entre opciones
+        this.changeTab = this.changeTab.bind(this);
+        this.setIdCurrentEvento = this.setIdCurrentEvento.bind(this);
+        this.getIdCurrentEvento = this.getIdCurrentEvento.bind(this);
+
+    }
+
+    //colocar el tab a mostrar
+    changeTab(tab) {
+        this.setState({ currentTab: tab });
+    }
+    //colocar el id ????
+
+    setIdCurrentEvento(id) {
+        this.setState({ _id: id });
+    }
+
+    getIdCurrentEvento() {
+        return this.state._id;
     }
 
 
@@ -98,31 +126,45 @@ export default class DashboardEventos extends Component {
         this.consultarSucursales();
         this.consultarTipos();
         console.log("eventos fin");
-        this.setState({isLoadingData: false})
+        this.setState({ isLoadingData: false })
     }
 
     render() {
         let isLoadingData = this.state.isLoadingData;
         console.log(isLoadingData)
         return (
-            <div>
-                <h2>nuevo evento</h2>
-                <FormEventoNuevo
-                    tipoEventos={this.state.listaTipoEventos}
-                    categoriaEventos={this.state.listaCategoriaEventos}
-                    sucursales={this.state.listaSucursales}
-                />
-                <h1>{this.state.isLoadingData}</h1>
-                <h2>Tabla</h2>
-                {!this.state.isLoadingData ? (
-
-                    this.state.listaEventos.map((key, evento) => {
-                        <p>{evento.titulo}</p>
-                    })
-
-                ) : (<p>Cargando tabla</p>)}
-
-            </div>
+            <Container id="crudSimple-container">
+                <Row>
+                    <Nav
+                        fill
+                        variant="tabs"
+                        defaultActiveKey="buscar"
+                        onSelect={(eventKey) => this.setState({ currentTab: eventKey })}
+                    >
+                        <Nav.Item>
+                            <Nav.Link eventKey="buscar">Búsqueda eventos</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link eventKey="crear">Crear evento</Nav.Link>
+                        </Nav.Item>
+                    </Nav>
+                </Row>
+                <Row>
+                    {this.state.currentTab === 'buscar' ? (
+                        <TableEventos
+                            changeTab={this.changeTab}
+                            setIdCurrentEvento={this.setIdCurrentEvento}
+                        />
+                    ) : this.state.currentTab === 'crear' ? (
+                        <FormEventoNuevo changeTab={this.changeTab} />
+                    ) : (
+                        <FormEventoEditar
+                            changeTab={this.changeTab}
+                            getIdCurrentEvento={this.getIdCurrentEvento}
+                        />
+                    )}
+                </Row>
+            </Container>
         )
     }
 }

@@ -13,7 +13,7 @@ import EventosInscripcion from "../Pages/Eventos/Components/EventosInscripcion";
 
 
 import DashboardEventos from "../Pages/Admin/Views/DashboardEventos/DashboardEventos";
-import DashboardMain from "../Pages/Admin/Views/DashboardMain.js/DashboardMain";
+import DashboardMain from "../Pages/Admin/Views/DashboardMain/DashboardMain";
 import DashboardUsuarios from "../Pages/Admin/Views/DashboardUsuarios/DashboardUsuarios";
 import { UserContext } from "../Contexts/UserContext";
 import { getAuth, getRol } from "../Helper/helper";

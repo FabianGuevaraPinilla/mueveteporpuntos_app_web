@@ -42,7 +42,7 @@ class App extends React.Component {
         previewUser: false,
       })
       console.log("sesion cerrada")
-      
+      window.location.reload();
     }
 
 
